@@ -67,24 +67,47 @@ CIRCUIT DIAGRAM
 
 
 **PROGRAM** 
- 
+```python 
 
+void setup()
+{
+  
+  pinMode(A0, INPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8,OUTPUT);
+  Serial.begin(9600);
+}
 
-
-
-
-
-
-
+void loop()
+{
+  int Sensorvalue = analogRead(A0);
+  Serial.print("Sensor Value = ");
+  Serial.println(Sensorvalue);
+  delay(500);
+  if(Sensorvalue<=500)
+  {
+    digitalWrite(8, HIGH);
+    digitalWrite(7, LOW);
+  }
+  else if(Sensorvalue>=300)
+  {
+    digitalWrite(8, LOW);
+    digitalWrite(7, HIGH);
+  }
+  
+}
+```
 
 **
 **Simulation output:** 
 **
 
 
-[My image](username.github.com/repository/img/image.jpg)
+![Screenshot 2022-05-06 152142](https://user-images.githubusercontent.com/103049243/167109451-dd87d864-58be-485a-81ce-f9e01896a648.png)
 
 
+
+![Screenshot 2022-05-06 152630](https://user-images.githubusercontent.com/103049243/167110140-0ab50ad9-33ce-4b67-9fee-d0d99304716f.png)
 
 
 
